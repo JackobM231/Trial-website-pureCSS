@@ -1,0 +1,32 @@
+
+.main-heading {
+  font-size: 3.5rem;
+  letter-spacing: .5rem;
+  word-spacing: 1rem;
+  text-transform: uppercase;
+}
+
+.secondary-heading {
+  font-size: 3rem;
+  letter-spacing: .5rem;
+  padding: 1rem 0 2rem 0;
+}
+
+.thirdary-heading {
+  font-size: 2rem;
+  letter-spacing: .5rem;
+  padding: 1rem 0 2rem 0;
+}
+
+.paragraph {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  letter-spacing: .3rem;
+}
+
+.footer__bottom--paragraph {
+  color: $color-white-dark;
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  word-spacing: 10px;
+}

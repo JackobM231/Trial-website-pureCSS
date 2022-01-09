@@ -1,0 +1,35 @@
+// COLOR VARIABLES
+$color-primary: #212529;
+$color-secondary: #616060;
+
+$color-white: #fff;
+$color-white-light: rgb(184, 184, 184);
+$color-white-dark: rgb(116, 116, 116);
+
+// FONT VARIABLES
+$font-priamry: 'Raleway', sans-serif;
+
+*,
+*::before,
+*::after {
+  /* Every element including sudo elements */
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //10px/16px = 62.5% --> 1rem = 10px
+}
+
+h1,h2,h3,h4,h5,h6 {font-weight: normal}
+
+body {
+  font-family: $font-priamry;
+}
+
+.mb-sm {margin-bottom: 2rem;}
+.mb-med {margin-bottom: 3rem;}
+.mb-lg {margin-bottom: 4rem;}
+.mb-hg {margin-bottom: 6rem;}

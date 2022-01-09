@@ -1,0 +1,85 @@
+.about {
+  &__container {
+    display: grid;
+    grid-template-rows: [navbar-start] 5.6rem [ navbar-end header-start] 90vh [header-end description-start] 60vh [description-end]
+     min-content [team-start] min-content [team-end footer-start] max-content [footer-end] min-content [page-end];
+    grid-template-columns: [full-start] minmax(1rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(1rem, 1fr) [full-end];
+  }
+
+  &__header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/office.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  &__achievements {
+    grid-row: description-start / description-end;
+    grid-column: center-start / center-end;
+
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+    grid-column-gap: 5vw;
+    align-content: center;
+    justify-items: center;
+    align-items: start;
+  }
+
+  &__main-heading {
+    grid-column: 1 / 2;
+    text-align: center;
+  }
+
+  &__paragraph {
+    grid-column: 2 / 3;
+  }
+
+  &__team {
+    grid-row:  team-start / team-end;
+    grid-column: full-start / full-end;
+
+    display: grid;
+    grid-template-rows: 30rem repeat(6, minmax(90vh, min-content));
+    grid-template-columns: minmax(1rem, 1fr) 8fr minmax(1rem, 1fr);
+    justify-items: center;
+    align-items: center;
+
+    border-top: 1px solid $color-secondary;
+    margin-bottom: 10rem;
+
+    &--heading {
+      grid-column: 1 / -1;
+      text-align: center;
+    }
+
+    &--person {
+      grid-column: 2 / -2;
+      
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+      grid-column-gap: 5vw;
+      grid-row-gap: 5rem;
+
+      padding-bottom: 15rem;
+
+      .description {
+
+        h1 {text-transform: none;}
+      }
+
+      .image {
+        width: 100%;
+        border-radius: .5rem;
+      }
+
+      .left {
+        order: 0;
+      }
+
+      .right {
+        order: 1;
+      }
+    }
+  }
+}
