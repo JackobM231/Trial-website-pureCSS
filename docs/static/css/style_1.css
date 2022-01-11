@@ -301,7 +301,7 @@ body {
   grid-column: full-start / full-end;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-row-gap: 2rem;
+  grid-row-gap: 5rem;
   grid-column-gap: 6.5rem;
   justify-content: center;
   align-content: center;
@@ -322,3 +322,18 @@ body {
       height: 6rem; }
     .home__features .feature h2 {
       align-self: center; }
+
+.redirect__container {
+  display: grid;
+  grid-template-rows: [navbar-start] 5.6rem [navbar-end content-start] 80vh [content-end footer-start] max-content [footer-end] min-content [page-end];
+  grid-template-columns: [full-start] minmax(1rem, 1fr) [center-start] repeat(4, [col-start] minmax(min-content, 280rem) [col-end]) [center-end] minmax(1rem, 1fr) [full-end]; }
+
+.redirect__content {
+  grid-row: content-start / content-end;
+  grid-column: center-start / center-end;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .redirect__content img {
+    width: 45rem; }
