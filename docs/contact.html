@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   
 
-  <title>Something about us</title>
+  <title>Contact</title>
 </head>
 
 <body>
@@ -22,22 +22,45 @@
         <a class="nav__link" href="index.html">Home</a>
       </li>
       <li class="nav__item nav__item--3 ">
-        <a class="nav__link" href="projects.html">Projects</a>
+        <a class="nav__link" href="redirect.html">Projects</a>
       </li>
       <li class="nav__item nav__item--4">
         <a class="nav__link" href="about.html">About</a>
       </li>
       <li class="nav__item nav__item--5">
-        <a class="nav__link" href="contact.html">Contact</a>
+        <a class="nav__link active" href="contact.html">Contact</a>
       </li>
     </ul>
   </nav>
 
-  <main class="redirect__container">
-    <section class="redirect__content">
-      <h3 class="main-heading"><b>redirection page</b></h3>
-      <br>
-      <img src="https://media1.giphy.com/media/2w4PHAh96lQKHDrhb0/giphy.gif?cid=ecf05e47y8d2dfgwvcbnjss9qu38a8aeh797s1tan7cvbng1&rid=giphy.gif&ct=g">
+  <main class="contact__container">
+    <section class="contact__mission">
+      <h2 class="main-heading contact__main-heading"><b>We are here to help. Write or call us with any question.</b></h2>
+    </section>
+
+    <section class="contact__content">
+      <h3 class="thirdary-heading">Phone:<br> +48 680 854 399</h3>
+      <h3 class="thirdary-heading">Email:<br> info@strawbash.com</h3>
+      <h3 class="thirdary-heading">Our office:<br>ul. Przyczolkowa 399<br>02-992 Warsaw<br>Poland</h3>
+    </section>
+
+    <section class="contact__forms">
+      <form action="redirect.html" method="get" target="_blank">
+        <div class="form-group">
+            <input autocomplete="off" class="input" autofocus name="name" placeholder="Name" type="text" required="required" maxlength="50">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" class="input" autofocus name="email" placeholder="Your Email" type="text" required="required" maxlength="256">
+        </div>
+        <div class="form-group">
+          <input autocomplete="off" class="input" autofocus placeholder="Phone (not necessary)" type="text" maxlength="22">
+        </div>
+        <div class="form-group">
+          <textarea id="message" class="input" name="message" oninput="limitChar(this)" placeholder="Message" required="required" maxlength="500" style="resize: none; height: 100px;"></textarea>
+          <p id="charCounter" class="paragraph" style="text-align: right">0/500</p>
+        </div>
+        <button class="btn btn-secondary" type="submit">Send</button>
+      </form>
     </section>
 
     <footer class="footer">
@@ -51,7 +74,7 @@
           <h3 class="thirdary-heading">Explore</h3>
           <ul class="footer__feature--list">
             <li><a class="nav__link nav__item nav__item" href="index.html">Home</a></li>
-            <li><a class="nav__link nav__item" href="projects.html">Projects</a></li>
+            <li><a class="nav__link nav__item" href="redirect.html">Projects</a></li>
             <li><a class="nav__link nav__item" href="about.html">About</a></li>
             <li><a class="nav__link nav__item" href="contact.html">Contact</a></li>
           </ul>
@@ -95,6 +118,23 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script>
+    let limitChar = (element) => {
+      const maxChar = document.getElementById(element.id).maxLength;
+          
+      let ele = document.getElementById(element.id);
+      let charLen = ele.value.length;
+      
+      let p = document.getElementById('charCounter');
+      p.innerHTML = `${charLen}/${maxChar}`;
+      
+      if (charLen >= maxChar) 
+      {
+        ele.value = ele.value.substring(0, maxChar);
+        p.innerHTML = `${maxChar}/${maxChar}`; 
+      }
+    }
+  </script>
 </body>
 
 </html>

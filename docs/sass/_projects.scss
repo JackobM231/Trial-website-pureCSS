@@ -1,0 +1,76 @@
+.projects {
+  &__container {
+    display: grid;
+    grid-template-rows: [navbar-start] 5.6rem [ navbar-end header-start] 90vh [header-end description-start] 60vh [description-end]
+     min-content [features-start] min-content [features-end footer-start] max-content [footer-end];
+    grid-template-columns: [full-start] minmax(1rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+     [center-end] minmax(1rem, 1fr) [full-end];
+  }
+
+  &__header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/projects.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  &__mission {
+    grid-row: description-start / description-end;
+    grid-column: col-start 2 / col-end 7;
+
+    display: grid;
+    grid-row-gap: 2rem;
+    justify-items: center;
+    align-items: center;
+  }
+
+  &__main-heading {
+    align-self: end;
+    text-align: center;
+  }
+
+  &__paragraph {
+    align-self: start;
+  }
+
+  &__gallery {
+    grid-row: features-start / features-end;
+    grid-column: full-start / full-end;
+    border-top: 1px solid $color-white-light;
+    padding: 13rem 0;
+
+    display: grid;
+    grid-template-columns: [full-start] minmax(1rem, 1fr) [center-start] repeat(2, [col-start] minmax(min-content, 50rem) [col-end])
+    [center-end] minmax(1rem, 1fr) [full-end];
+    grid-column-gap: .5rem;
+
+    .column {
+      &--1 {
+        grid-column: center-start / col-end 1;
+
+        @media (max-width: 600px) {
+          grid-column: center-start / col-end 2;
+        }
+      }
+
+      &--2 {
+        grid-column: col-start 2 / center-end;
+
+        @media (max-width: 600px) {
+          grid-column: center-start / col-end 2;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-top: .5rem;
+
+        @media (max-width: 600px) {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}

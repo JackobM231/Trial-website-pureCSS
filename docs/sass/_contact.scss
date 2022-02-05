@@ -1,0 +1,76 @@
+.contact {
+  &__container {
+    display: grid;
+    grid-template-rows: [navbar-start] 5.6rem [ navbar-end header-start] 30rem [header-end content-start] 60rem
+    [content-end footer-start] max-content [footer-end] min-content [page-end];
+    grid-template-columns: [full-start] minmax(1rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
+    [center-end] minmax(1rem, 1fr) [full-end];
+
+
+    @media (max-width: 800px) {
+      grid-template-rows: [navbar-start] 5.6rem [ navbar-end header-start] 30rem [header-end content-start] 35rem
+      [content-end forms-start] 45rem [forms-end footer-start] max-content [footer-end] min-content [page-end];
+    }
+  }
+
+  &__mission {
+    grid-row: header-start / header-end;
+    grid-column: col-start 2 / col-end 7;
+
+    align-self: center;
+  }
+
+  &__main-heading {
+    text-align: center;
+  }
+
+  &__content {
+    grid-row: content-start / content-end;
+    grid-column: center-start / col-end 4;
+
+    @media (max-width: 800px) {
+      grid-column: col-start 1 / col-end 8;
+      text-align: center;
+    }
+  }
+  
+  &__forms {
+    grid-row: content-start / content-end;
+    grid-column: col-start 5 / col-end 8;
+
+    @media (max-width: 800px) {
+      grid-row: forms-start / forms-end;
+      grid-column: col-start 1 / col-end 8;
+    }
+
+    .form-group {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+
+      .input {
+        width: 100%;
+        font-family: inherit;
+        font-size: 1.5rem;
+        line-height: inherit;
+        color: $color-primary;
+        padding: .5rem 1rem;
+        outline: 0;
+        border: 2px solid $color-white-light;
+        border-radius: .4rem;
+        transition: all .15s ease-in-out;
+
+        &:focus {
+          border-color: $color-primary;
+          box-shadow: 0 0 0 0.4rem rgba(82, 82, 82, .25);
+        }
+
+        &::placeholder {
+          color: $color-primary;
+          font-weight: 300;
+          font-size: 1.5rem;
+          opacity: .4;
+        }
+      }
+    }
+  }
+}

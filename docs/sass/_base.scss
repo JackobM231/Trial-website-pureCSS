@@ -3,6 +3,7 @@ $color-primary: #212529;
 $color-secondary: #616060;
 
 $color-white: #fff;
+$color-background: #f1f1f1;
 $color-white-light: rgb(184, 184, 184);
 $color-white-dark: rgb(116, 116, 116);
 
@@ -31,6 +32,7 @@ h1,h2,h3,h4,h5,h6 {font-weight: normal}
 
 body {
   font-family: $font-priamry;
+  background-color: $color-background;
 }
 
 .mb-sm {margin-bottom: 2rem;}
