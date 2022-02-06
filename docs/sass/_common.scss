@@ -149,6 +149,10 @@
     display: flex;
     justify-content: space-between;
     padding: 0 2rem;
+
+    .footer__socials {
+      flex-shrink: 0;
+    }
   
     .footer__socials--icon {
       margin-left: 1rem;
