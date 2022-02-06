@@ -10,6 +10,57 @@ $color-white-dark: rgb(116, 116, 116);
 // FONT VARIABLES
 $font-priamry: 'Raleway', sans-serif;
 
+//NAV PADDING
+$nav-pad: 1.5rem;
+
+//ANIMATIONS
+@keyframes moveUp {
+  0% {
+    transform: translateY(0); }
+  70% {
+    transform: translateY(-0.5rem); }
+  100% {
+    transform: translateY(0); }
+  }
+
+@keyframes moveDown {
+  0% {
+    transform: translateY(0); }
+  70% {
+    transform: translateY(0.5rem); }
+  100% {
+    transform: translateY(0); }
+  }
+
+@keyframes moveIn {
+  // Move from tob to bottom
+  0% {
+    opacity: 0;
+    transform: translateY(-50rem); }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0); }
+  }
+
+@keyframes moveOut {
+  // Move from bottom to top
+  0% {
+    opacity: 1;
+    transform: translateY(0); }
+    
+  100% {
+    opacity: 0;
+    transform: translateY(-50rem); }
+  }
+
+// @keyframes rotate {
+//   0% {
+//     transform: rotate(0); }
+//   100% {
+//     transform: rotate(180deg); }
+//   }
+
 *,
 *::before,
 *::after {
